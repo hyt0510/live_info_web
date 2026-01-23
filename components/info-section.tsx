@@ -28,52 +28,6 @@ export function InfoSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {/* Date */}
-            <div
-              className="p-6 rounded-xl backdrop-blur-md border border-border"
-              style={{
-                background:
-                  "linear-gradient(135deg, oklch(0.15 0.03 260 / 0.8) 0%, oklch(0.1 0.02 260 / 0.6) 100%)",
-              }}
-            >
-              <div className="flex items-start gap-4">
-                <div
-                  className="p-3 rounded-lg"
-                  style={{ background: "oklch(0.75 0.18 200 / 0.2)" }}
-                >
-                  <Calendar className="w-5 h-5" style={{ color: "oklch(0.75 0.18 200)" }} />
-                </div>
-                <div>
-                  <h3 className="font-mono text-sm text-muted-foreground mb-1">DATE</h3>
-                  <p className="font-sans text-lg text-foreground">2026年3月15日（土）</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Time */}
-            <div
-              className="p-6 rounded-xl backdrop-blur-md border border-border"
-              style={{
-                background:
-                  "linear-gradient(135deg, oklch(0.15 0.03 260 / 0.8) 0%, oklch(0.1 0.02 260 / 0.6) 100%)",
-              }}
-            >
-              <div className="flex items-start gap-4">
-                <div
-                  className="p-3 rounded-lg"
-                  style={{ background: "oklch(0.65 0.25 300 / 0.2)" }}
-                >
-                  <Clock className="w-5 h-5" style={{ color: "oklch(0.65 0.25 300)" }} />
-                </div>
-                <div>
-                  <h3 className="font-mono text-sm text-muted-foreground mb-1">TIME</h3>
-                  <p className="font-sans text-lg text-foreground">
-                    OPEN 17:00 / START 18:00
-                  </p>
-                </div>
-              </div>
-            </div>
-
             {/* Venue */}
             <div
               className="p-6 rounded-xl backdrop-blur-md border border-border"
@@ -90,10 +44,10 @@ export function InfoSection() {
                   <MapPin className="w-5 h-5" style={{ color: "oklch(0.8 0.2 130)" }} />
                 </div>
                 <div>
-                  <h3 className="font-mono text-sm text-muted-foreground mb-1">VENUE</h3>
-                  <p className="font-sans text-lg text-foreground">学園祭メインステージ</p>
+                  <h3 className="font-mono text-sm text-muted-foreground mb-1">会場</h3>
+                  <p className="font-sans text-lg text-foreground">鈴鹿SOUNDSTAGE</p>
                   <p className="font-sans text-sm text-muted-foreground mt-1">
-                    〒100-0001 東京都千代田区1-1-1
+                   〒510-0256 三重県鈴鹿市磯山1-9-8
                   </p>
                 </div>
               </div>
@@ -116,9 +70,9 @@ export function InfoSection() {
                 </div>
                 <div>
                   <h3 className="font-mono text-sm text-muted-foreground mb-1">TICKET</h3>
-                  <p className="font-sans text-lg text-foreground">入場無料</p>
+                  <p className="font-sans text-lg text-foreground"></p>
                   <p className="font-sans text-sm text-muted-foreground mt-1">
-                    学生証をご提示ください
+                    
                   </p>
                 </div>
               </div>
@@ -139,7 +93,7 @@ export function InfoSection() {
               }}
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.8280303808788!2d139.7671248!3d35.6812362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6551.603995941095!2d136.566309!3d34.810923!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600475b248e3eacd%3A0x2194f14becbc0971!2z5pel5pys44CB44CSNTEwLTAyNTYg5LiJ6YeN55yM6Yi06bm_5biC56Ov5bGx77yR5LiB55uu77yZ4oiS77yR77yQ!5e0!3m2!1sja!2sus!4v1769172527977!5m2!1sja!2sus"
                 width="100%"
                 height="100%"
                 style={{

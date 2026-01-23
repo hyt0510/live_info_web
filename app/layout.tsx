@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
+        url: '/multi_orbit_icon-dark.png',
         type: 'image/svg+xml',
       },
     ],

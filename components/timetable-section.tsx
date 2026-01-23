@@ -79,7 +79,7 @@ export function TimetableSection({ activeDay, setActiveDay }: TimetableSectionPr
               DAY {day}
             </span>
             <span className="block text-xs mt-1 opacity-60">
-              {day === 1 ? "11.15 SAT" : "11.16 SUN"}
+              {day === 1 ? "3.7 SAT" : "3.8 SUN"}
             </span>
           </button>
         ))}

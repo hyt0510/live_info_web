@@ -27,15 +27,6 @@ export function HeroSection() {
           </h1>
         </motion.div>
 
-        <motion.p
-          className="font-sans text-lg md:text-xl text-muted-foreground mb-8 tracking-wide"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          それぞれの軌道が交差し、共鳴する場所
-        </motion.p>
-
         <motion.div
           className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-sm md:text-base"
           initial={{ opacity: 0, y: 20 }}
@@ -46,7 +37,7 @@ export function HeroSection() {
             <span className="font-mono text-muted-foreground tracking-widest text-xs mb-1">
               DATE
             </span>
-            <span className="font-mono text-foreground font-semibold">2026.03.15 SAT</span>
+            <span className="font-mono text-foreground font-semibold">day1 : 2026.3.7 SAT</span>
           </div>
           <div className="hidden md:block w-px h-8 bg-border" />
           <div className="flex flex-col items-center">
@@ -55,13 +46,41 @@ export function HeroSection() {
             </span>
             <span className="font-mono text-foreground font-semibold">17:00 / 18:00</span>
           </div>
+        </motion.div>
+
+        {/* Day2 情報 */}
+        <motion.div
+          className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-sm md:text-base mt-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <div className="flex flex-col items-center">
+            <span className="font-mono text-muted-foreground tracking-widest text-xs mb-1 invisible">
+              DATE
+            </span>
+            <span className="font-mono text-foreground font-semibold">day2 : 2026.3.8 SUN</span>
+          </div>
           <div className="hidden md:block w-px h-8 bg-border" />
           <div className="flex flex-col items-center">
-            <span className="font-mono text-muted-foreground tracking-widest text-xs mb-1">
-              VENUE
+            <span className="font-mono text-muted-foreground tracking-widest text-xs mb-1 invisible">
+              OPEN / START
             </span>
-            <span className="font-mono text-foreground font-semibold">学園祭メインステージ</span>
+            <span className="font-mono text-foreground font-semibold">17:00 / 18:00</span>
           </div>
+        </motion.div>
+
+        {/* 会場情報 */}
+        <motion.div
+          className="flex flex-col items-center mt-8 text-sm md:text-base"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.65 }}
+        >
+          <span className="font-mono text-muted-foreground tracking-widest text-xs mb-1">
+            会場
+          </span>
+          <span className="font-mono text-foreground font-semibold">鈴鹿SOUNDSTAGE</span>
         </motion.div>
 
         <motion.div
@@ -74,7 +93,7 @@ export function HeroSection() {
             href="#info"
             className="group relative inline-flex items-center gap-2 px-8 py-4 font-mono text-sm tracking-widest text-primary-foreground bg-primary rounded-full overflow-hidden transition-all hover:scale-105"
           >
-            <span className="relative z-10">ENTRY</span>
+            /*<span className="relative z-10">ENTRY</span>*/
             <span
               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
               style={{

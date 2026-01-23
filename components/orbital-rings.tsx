@@ -4,7 +4,9 @@ import { motion } from "framer-motion"
 import { Earth } from "./earth"
 
 const orbits = [
-  { size: 600, duration: 30, color: "lime", delay: 0 },
+  { size: 400, duration: 25, color: "cyan", delay: 0 },
+  { size: 600, duration: 30, color: "lime", delay: 1 },
+  { size: 800, duration: 35, color: "purple", delay: 2 },
 ]
 
 // 地球が軌道を回る設定
