@@ -67,6 +67,12 @@
       "color": "purple",
       "image": "/images/artists/tansan.jpg",
       "objectFit": "cover"
+    },
+    {
+      "name": "Shy boy",
+      "color": "lime",
+      "image": "/images/artists/Shy_boy.jpg",
+      "objectFit": "cover"
     }
   ]
 }
