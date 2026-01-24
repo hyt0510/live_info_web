@@ -83,27 +83,6 @@ export function HeroSection() {
           <span className="font-mono text-foreground font-semibold">鈴鹿SOUNDSTAGE</span>
         </motion.div>
 
-        <motion.div
-          className="mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-        >
-          <a
-            href="#info"
-            className="group relative inline-flex items-center gap-2 px-8 py-4 font-mono text-sm tracking-widest text-primary-foreground bg-primary rounded-full overflow-hidden transition-all hover:scale-105"
-          >
-            /*<span className="relative z-10">ENTRY</span>*/
-            <span
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
-              style={{
-                background:
-                  "linear-gradient(90deg, oklch(0.75 0.18 200), oklch(0.65 0.25 300))",
-              }}
-            />
-            <span className="absolute inset-0 animate-pulse opacity-30 bg-primary rounded-full" />
-          </a>
-        </motion.div>
       </div>
 
       {/* Scroll Indicator */}

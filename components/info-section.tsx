@@ -70,7 +70,8 @@ export function InfoSection() {
                 </div>
                 <div>
                   <h3 className="font-mono text-sm text-muted-foreground mb-1">TICKET</h3>
-                  <p className="font-sans text-lg text-foreground"></p>
+                  <p className="font-sans text-lg text-foreground">1day : 1000円+1dr</p>
+                  <p className="font-sans text-lg text-foreground">2days : 1500円+1dr</p>
                   <p className="font-sans text-sm text-muted-foreground mt-1">
                     
                   </p>
@@ -116,15 +117,17 @@ export function InfoSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <button
-            type="button"
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfhLdsxcPTjwOohcYmPh6KVEQSBKXAKWL174A0v5nCf6dGd6A/viewform?usp=dialog"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-3 px-12 py-5 font-mono text-base tracking-widest rounded-full overflow-hidden transition-all hover:scale-105"
             style={{
               background: "linear-gradient(90deg, oklch(0.75 0.18 200), oklch(0.65 0.25 300))",
               color: "oklch(0.05 0.02 260)",
             }}
           >
-            <span className="relative z-10 font-bold">ENTRY</span>
+            <span className="relative z-10 font-bold">チケットの予約はこちらから!</span>
             <motion.span
               className="absolute inset-0 opacity-50"
               style={{
@@ -140,7 +143,7 @@ export function InfoSection() {
                 ease: "linear",
               }}
             />
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>
