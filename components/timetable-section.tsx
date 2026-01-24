@@ -2,29 +2,11 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
+import timetableData from "@/data/timetable.json"
+import type { TimetableItem } from "@/types/data"
 
-const day1Timetable = [
-  { time: "16:00", event: "OPEN", color: "muted" },
-  { time: "16:30", artist: "NOVA", color: "cyan" },
-  { time: "17:10", artist: "Stellar Echo", color: "purple" },
-  { time: "17:50", event: "BREAK", color: "muted" },
-  { time: "18:10", artist: "Orbit Collective", color: "lime" },
-  { time: "18:50", artist: "LUNA", color: "cyan" },
-  { time: "19:30", artist: "Cosmic Riders", color: "purple" },
-  { time: "20:10", event: "CLOSE", color: "muted" },
-]
-
-const day2Timetable = [
-  { time: "16:00", event: "OPEN", color: "muted" },
-  { time: "16:30", artist: "Nebula", color: "lime" },
-  { time: "17:10", artist: "Andromeda", color: "cyan" },
-  { time: "17:50", event: "BREAK", color: "muted" },
-  { time: "18:10", artist: "Solar Flare", color: "purple" },
-  { time: "18:50", artist: "Gravity Wave", color: "lime" },
-  { time: "19:30", artist: "Supernova", color: "cyan" },
-  { time: "20:10", artist: "Event Horizon", color: "purple" },
-  { time: "20:50", event: "CLOSE", color: "muted" },
-]
+const day1Timetable = timetableData.day1 as TimetableItem[]
+const day2Timetable = timetableData.day2 as TimetableItem[]
 
 const colorMap = {
   cyan: "oklch(0.75 0.18 200)",

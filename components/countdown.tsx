@@ -143,7 +143,7 @@ export function Countdown() {
 
         {/* 中央のカウントダウン数値 */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="grid grid-cols-4 gap-4 text-center mt-16">
+          <div className="grid grid-cols-4 gap-4 text-center">
             <CountdownUnit value={timeRemaining.days} label="DAYS" />
             <CountdownUnit value={timeRemaining.hours} label="HRS" />
             <CountdownUnit value={timeRemaining.minutes} label="MIN" />

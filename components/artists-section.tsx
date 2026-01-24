@@ -2,78 +2,11 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
+import artistsData from "@/data/artists.json"
+import type { Artist } from "@/types/data"
 
-const day1Artists = [
-  {
-    name: "NOVA",
-    genre: "Electronic / Ambient",
-    color: "cyan",
-    description: "宇宙的なサウンドスケープを紡ぐ",
-  },
-  {
-    name: "Stellar Echo",
-    genre: "Indie Rock",
-    color: "purple",
-    description: "エモーショナルな旋律で心を揺さぶる",
-  },
-  {
-    name: "Orbit Collective",
-    genre: "Jazz Fusion",
-    color: "lime",
-    description: "即興と調和が交差する瞬間",
-  },
-  {
-    name: "LUNA",
-    genre: "Dream Pop",
-    color: "cyan",
-    description: "幻想的な音の波に身を委ねて",
-  },
-  {
-    name: "Cosmic Riders",
-    genre: "Progressive Rock",
-    color: "purple",
-    description: "壮大なサウンドジャーニーへ誘う",
-  },
-]
-
-const day2Artists = [
-  {
-    name: "Nebula",
-    genre: "Synthwave",
-    color: "lime",
-    description: "レトロフューチャーな世界観",
-  },
-  {
-    name: "Andromeda",
-    genre: "Electronic / Ambient",
-    color: "cyan",
-    description: "銀河を旅する音楽体験",
-  },
-  {
-    name: "Solar Flare",
-    genre: "Rock / Alternative",
-    color: "purple",
-    description: "激しくも美しいエネルギー",
-  },
-  {
-    name: "Gravity Wave",
-    genre: "Experimental",
-    color: "lime",
-    description: "音の重力に引き込まれる",
-  },
-  {
-    name: "Supernova",
-    genre: "Electro Pop",
-    color: "cyan",
-    description: "輝きを放つポップサウンド",
-  },
-  {
-    name: "Event Horizon",
-    genre: "Dark Ambient",
-    color: "purple",
-    description: "深淵へと誘う音世界",
-  },
-]
+const day1Artists = artistsData.day1 as Artist[]
+const day2Artists = artistsData.day2 as Artist[]
 
 const colorMap = {
   cyan: {
@@ -171,34 +104,49 @@ export function ArtistsSection({ activeDay, setActiveDay }: ArtistsSectionProps)
               >
                 {/* Artist Card */}
                 <div
-                  className="relative aspect-square rounded-full flex items-center justify-center overflow-hidden transition-all duration-500"
+                  className="relative aspect-square rounded-full overflow-hidden transition-all duration-500"
                   style={{
                     border: `2px solid ${colors.border}`,
                     boxShadow:
                       hoveredIndex === index
                         ? `0 0 40px ${colors.glow}, inset 0 0 40px ${colors.bg}`
                         : `0 0 20px ${colors.glow}`,
-                    background: hoveredIndex === index ? colors.bg : "transparent",
                   }}
                 >
-                  <div className="text-center p-4">
+                  {/* Artist Image */}
+                  <img
+                    src={artist.image}
+                    alt={artist.name}
+                    className={`w-full h-full transition-transform duration-500 ${
+                      artist.objectFit === "contain" ? "object-contain p-4" : "object-cover"
+                    }`}
+                    style={{
+                      transform: hoveredIndex === index ? "scale(1.05)" : "scale(1)",
+                      filter: hoveredIndex === index ? "brightness(1.1)" : "brightness(0.9)",
+                      objectPosition: "center",
+                    }}
+                  />
+                  
+                  {/* Artist Name Overlay */}
+                  <div
+                    className="absolute inset-0 flex items-center justify-center"
+                    style={{
+                      background: hoveredIndex === index
+                        ? `linear-gradient(to top, ${colors.bg}, transparent 60%)`
+                        : `linear-gradient(to top, oklch(0 0 0 / 0.8), transparent 60%)`,
+                    }}
+                  >
                     <h3
-                      className="font-mono text-lg md:text-xl font-bold tracking-wide mb-1"
-                      style={{ color: colors.border }}
+                      className="font-mono text-lg md:text-xl font-bold tracking-wide absolute bottom-6"
+                      style={{
+                        color: hoveredIndex === index ? colors.border : "oklch(0.95 0 0)",
+                        textShadow: "0 2px 8px oklch(0 0 0 / 0.5)",
+                      }}
                     >
                       {artist.name}
                     </h3>
-                    <p className="font-sans text-xs text-muted-foreground">{artist.genre}</p>
                   </div>
                 </div>
-
-                {/* Description on Hover */}
-                <motion.div
-                  className="absolute -bottom-12 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  initial={false}
-                >
-                  <p className="font-sans text-sm text-muted-foreground">{artist.description}</p>
-                </motion.div>
 
                 {/* Orbit Line Animation */}
                 {hoveredIndex === index && (
