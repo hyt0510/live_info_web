@@ -15,7 +15,7 @@ const _orbitron = Orbitron({
 
 export const metadata: Metadata = {
   title: 'multi-orbit | Where Individual Paths Collide',
-  description: 'それぞれの軌道が交差し、共鳴する場所。学園祭ライブイベント multi-orbit',
+  description: '卒業ライブ:multi-orbit',
   icons: {
     icon: [
       {
