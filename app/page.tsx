@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
+import { CountdownSection } from "@/components/countdown-section"
 import { InfoSection } from "@/components/info-section"
 import { TimetableSection } from "@/components/timetable-section"
 import { ArtistsSection } from "@/components/artists-section"
@@ -19,6 +20,7 @@ export default function Page() {
       <Navigation />
       <main className="relative">
         <HeroSection />
+        <CountdownSection />
         <TimetableSection activeDay={activeDay} setActiveDay={setActiveDay} />
         <ArtistsSection activeDay={activeDay} setActiveDay={setActiveDay} />
         <InfoSection />
