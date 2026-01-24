@@ -117,6 +117,11 @@ export function ArtistsSection({ activeDay, setActiveDay }: ArtistsSectionProps)
                   <img
                     src={artist.image}
                     alt={artist.name}
+                    loading="lazy"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.src = "/images/artists/no_image.png"
+                    }}
                     className={`w-full h-full transition-transform duration-500 ${
                       artist.objectFit === "contain" ? "object-contain p-4" : "object-cover"
                     }`}
