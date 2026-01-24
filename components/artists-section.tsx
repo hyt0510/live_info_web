@@ -137,10 +137,15 @@ export function ArtistsSection({ activeDay, setActiveDay }: ArtistsSectionProps)
                     }}
                   >
                     <h3
-                      className="font-mono text-lg md:text-xl font-bold tracking-wide absolute bottom-6"
+                      className={`font-mono font-bold tracking-wide absolute bottom-4 px-4 text-center leading-tight ${
+                        artist.name.length > 12 ? 'text-sm md:text-base' : 'text-lg md:text-xl'
+                      }`}
                       style={{
                         color: hoveredIndex === index ? colors.border : "oklch(0.95 0 0)",
                         textShadow: "0 2px 8px oklch(0 0 0 / 0.5)",
+                        maxWidth: "90%",
+                        wordBreak: "break-word",
+                        hyphens: "auto",
                       }}
                     >
                       {artist.name}
