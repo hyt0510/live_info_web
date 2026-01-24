@@ -1,0 +1,72 @@
+{
+  "day1": [
+    {
+      "name": "e/m",
+      "color": "cyan",
+      "image": "/images/artists/em.jpg",
+      "objectFit": "cover"
+    },
+    {
+      "name": "アーチャンズ",
+      "color": "purple",
+      "image": "/images/artists/atyan.JPG",
+      "objectFit": "cover"
+    },
+    {
+      "name": "アタック!!",
+      "color": "lime",
+      "image": "/images/artists/atack.jpg",
+      "objectFit": "contain"
+    },
+    {
+      "name": "ハラダクション",
+      "color": "cyan",
+      "image": "/images/artists/harada.jpg",
+      "objectFit": "cover"
+    },
+    {
+      "name": "Langue de Chat",
+      "color": "purple",
+      "image": "/images/artists/langue_de_chat.jpg",
+      "objectFit": "cover"
+    }
+  ],
+  "day2": [
+    {
+      "name": "羅武♡永遠深夜",
+      "color": "lime",
+      "image": "/images/artists/love.jpg",
+      "objectFit": "contain"
+    },
+    {
+      "name": "Alustale",
+      "color": "cyan",
+      "image": "/images/artists/no_image.png",
+      "objectFit": "contain"
+    },
+    {
+      "name": "ヤバいYシャツ屋さん",
+      "color": "purple",
+      "image": "/images/artists/Y.png",
+      "objectFit": "contain"
+    },
+    {
+      "name": "LUSH",
+      "color": "lime",
+      "image": "/images/artists/LUSH.jpg",
+      "objectFit": "contain"
+    },
+    {
+      "name": "CHOKKIN出禁",
+      "color": "cyan",
+      "image": "/images/artists/CHOKKIN.jpg",
+      "objectFit": "cover"
+    },
+    {
+      "name": "炭酸うーろん",
+      "color": "purple",
+      "image": "/images/artists/tansan.jpg",
+      "objectFit": "cover"
+    }
+  ]
+}
