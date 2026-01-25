@@ -73,6 +73,9 @@ export function InfoSection() {
                   <p className="font-sans text-lg text-foreground">1day : 1000円+1dr</p>
                   <p className="font-sans text-lg text-foreground">2days : 1500円+1dr</p>
                   <p className="font-sans text-sm text-muted-foreground mt-1">
+                   ※2daysチケットに関してはドリンク代が両日とも必要になります。
+                  </p>
+                  <p className="font-sans text-sm text-muted-foreground mt-1">
                     
                   </p>
                 </div>

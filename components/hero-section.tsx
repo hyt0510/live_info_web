@@ -44,7 +44,7 @@ export function HeroSection() {
             <span className="font-mono text-muted-foreground tracking-widest text-xs mb-1">
               OPEN / START
             </span>
-            <span className="font-mono text-foreground font-semibold">17:00 / 18:00</span>
+            <span className="font-mono text-foreground font-semibold">14:00 / 14:30</span>
           </div>
         </motion.div>
 

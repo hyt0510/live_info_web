@@ -39,13 +39,13 @@
       "objectFit": "contain"
     },
     {
-      "name": "Alustale",
+      "name": "Alus tale",
       "color": "cyan",
-      "image": "/images/artists/no_image.png",
-      "objectFit": "contain"
+      "image": "/images/artists/Alus_tale.jpg",
+      "objectFit": "cover"
     },
     {
-      "name": "ヤバいYシャツ屋さん",
+      "name": "ヤバイYシャツ屋さん",
       "color": "purple",
       "image": "/images/artists/Y.png",
       "objectFit": "contain"
