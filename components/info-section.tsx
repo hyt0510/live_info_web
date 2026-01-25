@@ -147,6 +147,16 @@ export function InfoSection() {
               }}
             />
           </a>
+          
+          {/* Note about band ticket reservation */}
+          <motion.p
+            className="mt-6 text-sm text-muted-foreground font-sans"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            ※各出演バンドからでもチケットの予約は可能です
+          </motion.p>
         </motion.div>
       </div>
     </section>
