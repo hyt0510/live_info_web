@@ -14,8 +14,36 @@ const _orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: 'multi-orbit | Where Individual Paths Collide',
-  description: '卒業ライブ:multi-orbit',
+  title: 'multi-orbit | 鈴鹿高専卒業ライブ 2026',
+  description: '鈴鹿高専卒業ライブ multi-orbit - 2026年3月7日(土)・8日(日) 鈴鹿SOUNDSTAGEにて開催。Where Individual Paths Collide. 個々の軌道が交わる場所。',
+  keywords: ['鈴鹿高専', '卒業ライブ', 'multi-orbit', '鈴鹿SOUNDSTAGE', '鈴鹿', 'ライブ', '音楽イベント', '2026', 'マルチオービット'],
+  authors: [{ name: 'multi-orbit' }],
+  openGraph: {
+    title: 'multi-orbit | 鈴鹿高専卒業ライブ 2026',
+    description: '鈴鹿高専卒業ライブ multi-orbit - 2026年3月7日(土)・8日(日) 鈴鹿SOUNDSTAGEにて開催',
+    url: 'https://live-info-web.vercel.app',
+    siteName: 'multi-orbit',
+    locale: 'ja_JP',
+    type: 'website',
+    images: [
+      {
+        url: '/multi_orbit_icon.png',
+        width: 1200,
+        height: 630,
+        alt: 'multi-orbit 鈴鹿高専卒業ライブ',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'multi-orbit | 鈴鹿高専卒業ライブ 2026',
+    description: '鈴鹿高専卒業ライブ multi-orbit - 2026年3月7日(土)・8日(日)',
+    images: ['/multi_orbit_icon.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: [
       {
@@ -23,11 +51,11 @@ export const metadata: Metadata = {
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/multi_orbit_icon-dark.png',
+        url: '/multi_orbit_icon.png',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/multi_orbit_icon-dark.png',
+        url: '/multi_orbit_icon.png',
         type: 'image/svg+xml',
       },
     ],
