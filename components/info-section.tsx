@@ -45,9 +45,32 @@ export function InfoSection() {
                 </div>
                 <div>
                   <h3 className="font-mono text-sm text-muted-foreground mb-1">会場</h3>
-                  <p className="font-sans text-lg text-foreground">鈴鹿SOUNDSTAGE</p>
+                  <a
+                    href="https://www.suzukasoundstage.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-sans text-lg text-foreground hover:text-primary transition-colors inline-flex items-center gap-2 group"
+                  >
+                    鈴鹿SOUNDSTAGE
+                    <svg
+                      className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </a>
                   <p className="font-sans text-sm text-muted-foreground mt-1">
                    〒510-0256 三重県鈴鹿市磯山1-9-8
+                  </p>
+                  <p className="font-sans text-sm text-muted-foreground mt-1">
+                   ※会場には駐車場がないため公共交通機関をご利用ください。
                   </p>
                 </div>
               </div>
