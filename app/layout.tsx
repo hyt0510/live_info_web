@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: 'multi-orbit | 鈴鹿高専卒業ライブ 2026',
     description: '鈴鹿高専卒業ライブ multi-orbit - 2026年3月7日(土)・8日(日) 鈴鹿SOUNDSTAGEにて開催',
     url: 'https://live-info-web.vercel.app',
-    siteName: 'multi-orbit',
+    siteName: '2026鈴鹿高専卒業ライブ multi-orbit',
     locale: 'ja_JP',
     type: 'website',
     images: [
