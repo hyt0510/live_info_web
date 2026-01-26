@@ -1,19 +1,14 @@
 "use client"
 
-import { useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { CountdownSection } from "@/components/countdown-section"
 import { InfoSection } from "@/components/info-section"
-import { TimetableSection } from "@/components/timetable-section"
-import { ArtistsSection } from "@/components/artists-section"
+import { ScheduleExplorer } from "@/components/schedule-explorer"
 import { Footer } from "@/components/footer"
 import { Starfield } from "@/components/starfield"
-import { Earth } from "@/components/earth"
 
 export default function Page() {
-  const [activeDay, setActiveDay] = useState<1 | 2>(1)
-
   return (
     <>
       <Starfield />
@@ -21,8 +16,7 @@ export default function Page() {
       <main className="relative">
         <HeroSection />
         <CountdownSection />
-        <TimetableSection activeDay={activeDay} setActiveDay={setActiveDay} />
-        <ArtistsSection activeDay={activeDay} setActiveDay={setActiveDay} />
+        <ScheduleExplorer />
         <InfoSection />
       </main>
       <Footer />

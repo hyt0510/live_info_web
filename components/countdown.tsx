@@ -1,55 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useEffect, useState } from "react"
-
-interface TimeRemaining {
-  days: number
-  hours: number
-  minutes: number
-  seconds: number
-  total: number
-}
+import { useCountdown } from "@/hooks/use-countdown"
 
 export function Countdown() {
   const targetDate = new Date("2026-03-07T18:00:00")
-  const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-    total: 0,
-  })
+  const timeRemaining = useCountdown(targetDate)
 
-  useEffect(() => {
-    const updateCountdown = () => {
-      const now = new Date()
-      const difference = targetDate.getTime() - now.getTime()
-
-      if (difference > 0) {
-        setTimeRemaining({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / (1000 * 60)) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
-          total: difference,
-        })
-      } else {
-        setTimeRemaining({
-          days: 0,
-          hours: 0,
-          minutes: 0,
-          seconds: 0,
-          total: 0,
-        })
-      }
-    }
-
-    updateCountdown()
-    const interval = setInterval(updateCountdown, 1000)
-
-    return () => clearInterval(interval)
-  }, [])
 
   // 各軌道の進行度を計算（0-1）
   const secondsProgress = (timeRemaining.seconds % 60) / 60

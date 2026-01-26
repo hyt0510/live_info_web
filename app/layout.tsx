@@ -58,7 +58,7 @@ export const metadata: Metadata = {
       },
       {
         url: '/multi_orbit_icon.png',
-        type: 'image/svg+xml',
+        type: 'image/png',
       },
     ],
     apple: '/multi_orbit_icon.png',

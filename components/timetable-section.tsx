@@ -1,71 +1,40 @@
 "use client"
 
 import { motion, useInView } from "framer-motion"
-import { useRef, useState } from "react"
-import timetableData from "@/data/timetable.json"
+
+import { useRef } from "react"
+
+import { useTimetable, colorMap } from "@/hooks/use-timetable"
+
 import type { TimetableItem } from "@/types/data"
 
-const day1Timetable = timetableData.day1 as TimetableItem[]
-const day2Timetable = timetableData.day2 as TimetableItem[]
 
-const colorMap = {
-  cyan: "oklch(0.75 0.18 200)",
-  purple: "oklch(0.65 0.25 300)",
-  lime: "oklch(0.8 0.2 130)",
-  muted: "oklch(0.4 0.02 260)",
-}
 
 interface TimetableSectionProps {
+
   activeDay: 1 | 2
-  setActiveDay: (day: 1 | 2) => void
+
 }
 
-export function TimetableSection({ activeDay, setActiveDay }: TimetableSectionProps) {
+
+
+export function TimetableSection({ activeDay }: TimetableSectionProps) {
+
   const ref = useRef(null)
+
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
-  const timetable = activeDay === 1 ? day1Timetable : day2Timetable
+
+
+  const { timetable } = useTimetable(activeDay)
+
+
 
   return (
+
     <section id="timetable" className="relative py-32 px-6">
-      {/* Day Tabs - Centered */}
-      <motion.div
-        className="flex justify-center gap-4 mb-16"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
-      >
-        {[1, 2].map((day) => (
-          <button
-            key={day}
-            type="button"
-            onClick={() => setActiveDay(day as 1 | 2)}
-            className={`
-              relative px-8 py-3 font-mono text-sm tracking-wider rounded-lg
-              transition-all duration-300 border
-              ${activeDay === day 
-                ? "border-primary text-primary" 
-                : "border-border text-muted-foreground hover:border-muted-foreground"
-              }
-            `}
-            style={{
-              background: activeDay === day 
-                ? "linear-gradient(135deg, oklch(0.75 0.18 200 / 0.15) 0%, transparent 100%)"
-                : "transparent",
-              boxShadow: activeDay === day 
-                ? "0 0 20px oklch(0.75 0.18 200 / 0.3)"
-                : "none",
-            }}
-          >
-            <span className="relative z-10">
-              DAY {day}
-            </span>
-            <span className="block text-xs mt-1 opacity-60">
-              {day === 1 ? "3.7 SAT" : "3.8 SUN"}
-            </span>
-          </button>
-        ))}
-      </motion.div>
+
+
 
       <div className="max-w-2xl mx-auto" ref={ref}>
         <motion.div
