@@ -1,11 +1,14 @@
 "use client"
 
+import { useMemo } from "react"
 import { motion } from "framer-motion"
 import { useCountdown } from "@/hooks/use-countdown"
 
+// イベント開催日を定数として定義
+const EVENT_DATE = new Date("2026-03-07T18:00:00")
+
 export function Countdown() {
-  const targetDate = new Date("2026-03-07T18:00:00")
-  const timeRemaining = useCountdown(targetDate)
+  const timeRemaining = useCountdown(EVENT_DATE)
 
 
   // 各軌道の進行度を計算（0-1）

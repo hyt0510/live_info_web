@@ -28,17 +28,27 @@ const calculateTimeRemaining = (targetDate: Date): TimeRemaining => {
 }
 
 export const useCountdown = (targetDate: Date) => {
-  const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>(() =>
-    calculateTimeRemaining(targetDate)
-  )
+  // 初期値を固定してHydrationエラーを防ぐ
+  const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    total: 0,
+  })
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
+    // マウント時に実際の値を設定
+    setTimeRemaining(calculateTimeRemaining(targetDate))
+    
     const interval = setInterval(() => {
       setTimeRemaining(calculateTimeRemaining(targetDate))
     }, 1000)
 
     return () => clearInterval(interval)
-  }, [targetDate])
+  }, [targetDate.getTime()])
 
   return timeRemaining
 }
