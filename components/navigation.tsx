@@ -5,19 +5,23 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 
 const navItems = [
-  { label: "ARTISTS", href: "#artists" },
   { label: "TIMETABLE", href: "#timetable" },
+  { label: "ARTISTS", href: "#artists" },
   { label: "INFO", href: "#info" },
 ]
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
     }
+    // 初期値を設定
+    handleScroll()
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
