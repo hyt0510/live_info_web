@@ -3,6 +3,7 @@ export interface Artist {
   color: "cyan" | "purple" | "lime"
   image: string
   objectFit: "cover" | "contain"
+  instagram?: string  // InstagramのURL（オプション）
 }
 
 export interface ArtistsData {
