@@ -38,7 +38,7 @@ export function Countdown() {
                 "linear-gradient(90deg, oklch(0.75 0.18 200), oklch(0.65 0.25 300), oklch(0.8 0.2 130))",
             }}
           >
-            EVENT IS LIVE!
+            EVENT IS STARTING!
           </span>
         </div>
       </motion.div>

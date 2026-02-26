@@ -127,9 +127,10 @@ export function InfoSection() {
                   border: 0,
                   filter: "invert(90%) hue-rotate(180deg) contrast(0.9) brightness(0.8)",
                 }}
-                allowFullScreen
+                sandbox="allow-scripts allow-same-origin allow-popups"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
                 title="会場地図"
               />
             </div>
