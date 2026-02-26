@@ -1,9 +1,15 @@
+export interface ArtistLink {
+  type: "instagram" | "tiktok" | "twitter" | "youtube" | "website" | "bandcamp"
+  url: string
+}
+
 export interface Artist {
   name: string
   color: "cyan" | "purple" | "lime"
   image: string
   objectFit: "cover" | "contain"
-  instagram?: string  // InstagramのURL（オプション）
+  instagram?: string  // InstagramのURL（オプション・後方互換性のため）
+  links?: ArtistLink[]  // 複数のリンク（オプション）
 }
 
 export interface ArtistsData {

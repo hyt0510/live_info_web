@@ -5,7 +5,17 @@
       "color": "cyan",
       "image": "/images/artists/em.jpg",
       "objectFit": "cover",
-      "instagram": "https://www.instagram.com/e.m_band?igsh=Y205NnVlbTkwMzJk"
+      "instagram": "https://www.instagram.com/e.m_band?igsh=Y205NnVlbTkwMzJk",
+      "links": [
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/e.m_band?igsh=Y205NnVlbTkwMzJk"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@e.m_band?_r=1&_t=ZS-946j1uPvv2i&fbclid=PAdGRleAQNPDpleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAadzydtai-a3uhxT3am8Xlzq7dCiXIU9bubr_gtBBbRXIlbHJFcqkXKEo-clvw_aem_gg2XTkzUaupaqfC0mMWkIw"
+        }
+      ]
     },
     {
       "name": "アーチャンズ",
