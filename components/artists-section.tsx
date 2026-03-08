@@ -111,20 +111,181 @@ export function ArtistsSection({ activeDay }: ArtistsSectionProps) {
             const hasLinks = !!(artist.links && artist.links.length > 0)
             const hasInstagram = !!artist.instagram
             const hasAnyLink = hasLinks || hasInstagram
+            const isSpecialArtist = artist.name === "e/m"
             
             const cardContent = (
               <>
+                {/* e/m専用の豪華なアニメーションリング */}
+                {isSpecialArtist && (
+                  <>
+                    <div className="absolute inset-0 pointer-events-none z-10">
+                      {/* 回転する外側のリング */}
+                      <motion.div
+                        className="absolute -inset-1"
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                      >
+                        <div className="absolute inset-0 rounded-full"
+                          style={{
+                            border: `4px solid transparent`,
+                            borderTopColor: colors.border,
+                            borderRightColor: colors.border,
+                            opacity: 0.7,
+                            filter: `drop-shadow(0 0 15px ${colors.glow}) drop-shadow(0 0 25px ${colors.glow})`
+                          }}
+                        />
+                      </motion.div>
+                      {/* 逆回転する中間リング */}
+                      <motion.div
+                        className="absolute inset-1"
+                        animate={{ rotate: -360 }}
+                        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                      >
+                        <div className="absolute inset-0 rounded-full"
+                          style={{
+                            border: `3px solid transparent`,
+                            borderBottomColor: colors.border,
+                            borderLeftColor: colors.border,
+                            opacity: 0.5,
+                            filter: `drop-shadow(0 0 12px ${colors.glow}) drop-shadow(0 0 20px ${colors.glow})`
+                          }}
+                        />
+                      </motion.div>
+                      {/* パルスエフェクト1 */}
+                      <motion.div
+                        className="absolute inset-4 rounded-full"
+                        animate={{
+                          scale: [1, 1.15, 1],
+                          opacity: [0.4, 0.7, 0.4]
+                        }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        style={{
+                          border: `2px solid ${colors.border}`,
+                          filter: `blur(2px) drop-shadow(0 0 20px ${colors.glow})`
+                        }}
+                      />
+                      {/* パルスエフェクト2 (逆位相) */}
+                      <motion.div
+                        className="absolute inset-6 rounded-full"
+                        animate={{
+                          scale: [1.15, 1, 1.15],
+                          opacity: [0.7, 0.4, 0.7]
+                        }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        style={{
+                          border: `1px solid ${colors.border}`,
+                          filter: `blur(3px) drop-shadow(0 0 15px ${colors.glow})`
+                        }}
+                      />
+                    </div>
+                    {/* 星のような光の粒子 */}
+                    <div className="absolute inset-0 pointer-events-none z-10">
+                      {[...Array(8)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          className="absolute w-2 h-2 rounded-full"
+                          style={{
+                            background: colors.border,
+                            boxShadow: `0 0 10px ${colors.glow}, 0 0 20px ${colors.glow}`,
+                            left: '50%',
+                            top: '50%',
+                            transformOrigin: '0 0'
+                          }}
+                          animate={{
+                            rotate: [0, 360],
+                            opacity: [0.3, 0.8, 0.3],
+                            scale: [0.5, 1, 0.5]
+                          }}
+                          transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            ease: "linear",
+                            delay: i * 0.5
+                          }}
+                          initial={{
+                            x: Math.cos((i * Math.PI * 2) / 8) * 80,
+                            y: Math.sin((i * Math.PI * 2) / 8) * 80
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
+                {/* e/m専用の王冠 */}
+                {isSpecialArtist && (
+                  <motion.div
+                    className="absolute -top-8 md:-top-12 left-1/2 -translate-x-1/2 z-20"
+                    animate={{
+                      y: [0, -5, 0],
+                      rotate: [-5, 5, -5]
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  >
+                    <svg 
+                      className="w-16 h-16 md:w-24 md:h-24"
+                      viewBox="0 0 64 64"
+                      style={{
+                        filter: `drop-shadow(0 0 10px #FFD700) drop-shadow(0 0 20px #FFA500)`
+                      }}
+                    >
+                      {/* 王冠のベース */}
+                      <defs>
+                        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" style={{ stopColor: '#FFD700', stopOpacity: 1 }} />
+                          <stop offset="50%" style={{ stopColor: '#FFA500', stopOpacity: 1 }} />
+                          <stop offset="100%" style={{ stopColor: '#FF8C00', stopOpacity: 1 }} />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M8 42 L8 52 L56 52 L56 42 L50 35 L45 42 L38 28 L32 38 L26 28 L19 42 L14 35 Z"
+                        fill="url(#goldGradient)"
+                        stroke="#FFD700"
+                        strokeWidth="1.5"
+                      />
+                      {/* 王冠の装飾 */}
+                      <circle cx="14" cy="32" r="3" fill="#FFD700" />
+                      <circle cx="32" cy="25" r="3" fill="#FFD700" />
+                      <circle cx="50" cy="32" r="3" fill="#FFD700" />
+                      {/* 宝石 */}
+                      <motion.circle 
+                        cx="32" 
+                        cy="44" 
+                        r="4"
+                        fill="white"
+                        animate={{
+                          opacity: [0.7, 1, 0.7],
+                          scale: [0.9, 1.1, 0.9]
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      />
+                    </svg>
+                  </motion.div>
+                )}
+                
                 {/* Artist Card */}
                 <div
                   className={`relative aspect-square rounded-full overflow-hidden transition-all duration-500 ${
                     (hasInstagram && !hasLinks) ? 'cursor-pointer' : ''
                   }`}
                   style={{
-                    border: `2px solid ${colors.border}`,
-                    boxShadow:
-                      hoveredIndex === index
+                    border: isSpecialArtist 
+                      ? `4px solid ${colors.border}`
+                      : `2px solid ${colors.border}`,
+                    boxShadow: isSpecialArtist
+                      ? (hoveredIndex === index
+                        ? `0 0 100px ${colors.glow}, 0 0 50px ${colors.border}, 0 0 30px ${colors.glow}, inset 0 0 60px ${colors.bg}`
+                        : `0 0 60px ${colors.glow}, 0 0 35px ${colors.border}, 0 0 20px ${colors.glow}`)
+                      : (hoveredIndex === index
                         ? `0 0 40px ${colors.glow}, inset 0 0 40px ${colors.bg}`
-                        : `0 0 20px ${colors.glow}`,
+                        : `0 0 20px ${colors.glow}`),
                   }}
                 >
                   {/* Artist Image */}
@@ -279,7 +440,7 @@ export function ArtistsSection({ activeDay }: ArtistsSectionProps) {
                 {cardContent}
 
                 {/* Orbit Line Animation */}
-                {hoveredIndex === index && (
+                {hoveredIndex === index && !isSpecialArtist && (
                   <motion.div
                     className="fixed inset-0 pointer-events-none z-0"
                     initial={{ opacity: 0 }}
@@ -303,6 +464,58 @@ export function ArtistsSection({ activeDay }: ArtistsSectionProps) {
                       />
                     </svg>
                   </motion.div>
+                )}
+                
+                {/* e/m専用のホバー時エフェクト - 舞う星 */}
+                {hoveredIndex === index && isSpecialArtist && (
+                  <div className="absolute inset-0 pointer-events-none overflow-visible" style={{ zIndex: 15 }}>
+                    {[...Array(25)].map((_, i) => {
+                      // 各星の軌道パラメータ
+                      const orbitRadius = 50 + (i % 5) * 8 // 5つの異なる軌道半径
+                      const duration = 4 + (i % 3) * 1.5 // 異なる速度
+                      const startAngle = (i * Math.PI * 2) / 25
+                      const reverseDirection = i % 2 === 0 ? 1 : -1 // 半分は逆回転
+                      
+                      return (
+                        <motion.div
+                          key={i}
+                          className="absolute"
+                          style={{
+                            left: '50%',
+                            top: '50%',
+                            width: '10px',
+                            height: '10px',
+                          }}
+                          animate={{
+                            x: Array.from({ length: 100 }, (_, t) => 
+                              Math.cos(startAngle + (t / 100) * Math.PI * 2 * reverseDirection) * orbitRadius * 2
+                            ),
+                            y: Array.from({ length: 100 }, (_, t) => 
+                              Math.sin(startAngle + (t / 100) * Math.PI * 2 * reverseDirection) * orbitRadius * 2
+                            ),
+                            scale: [0.8, 1.3, 0.8],
+                            opacity: [0.6, 1, 0.6],
+                            rotate: [0, reverseDirection * 360]
+                          }}
+                          transition={{
+                            duration: duration,
+                            repeat: Infinity,
+                            ease: "linear",
+                            delay: i * 0.1
+                          }}
+                        >
+                          <div 
+                            className="w-full h-full"
+                            style={{
+                              background: colors.border,
+                              boxShadow: `0 0 15px ${colors.glow}, 0 0 30px ${colors.glow}, 0 0 45px ${colors.glow}`,
+                              clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)'
+                            }}
+                          />
+                        </motion.div>
+                      )
+                    })}
+                  </div>
                 )}
               </motion.div>
             )
