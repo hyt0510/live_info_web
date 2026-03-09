@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react"
 const navItems = [
   { label: "TIMETABLE", href: "#timetable" },
   { label: "ARTISTS", href: "#artists" },
+  { label: "LIVE REPORT", href: "#live-report" },
   { label: "INFO", href: "#info" },
 ]
 

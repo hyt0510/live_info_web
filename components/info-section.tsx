@@ -136,52 +136,6 @@ export function InfoSection() {
             </div>
           </motion.div>
         </div>
-
-        {/* CTA Button */}
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfhLdsxcPTjwOohcYmPh6KVEQSBKXAKWL174A0v5nCf6dGd6A/viewform?usp=dialog"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-3 px-12 py-5 font-mono text-base tracking-widest rounded-full overflow-hidden transition-all hover:scale-105"
-            style={{
-              background: "linear-gradient(90deg, oklch(0.75 0.18 200), oklch(0.65 0.25 300))",
-              color: "oklch(0.05 0.02 260)",
-            }}
-          >
-            <span className="relative z-10 font-bold">チケットの予約はこちらから!</span>
-            <motion.span
-              className="absolute inset-0 opacity-50"
-              style={{
-                background:
-                  "linear-gradient(90deg, oklch(0.65 0.25 300), oklch(0.75 0.18 200), oklch(0.8 0.2 130))",
-              }}
-              animate={{
-                x: ["-100%", "100%"],
-              }}
-              transition={{
-                repeat: Number.POSITIVE_INFINITY,
-                duration: 2,
-                ease: "linear",
-              }}
-            />
-          </a>
-          
-          {/* Note about band ticket reservation */}
-          <motion.p
-            className="mt-6 text-sm text-muted-foreground font-sans"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            ※各出演バンドからでもチケットの予約は可能です
-          </motion.p>
-        </motion.div>
       </div>
     </section>
   )
